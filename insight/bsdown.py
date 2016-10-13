@@ -32,6 +32,7 @@ BOOTSTRAP_HEADER = """<!DOCTYPE html>
       integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" 
       crossorigin="anonymous">
 
+
     <style type="text/css">
       div.content {
         float: none;
@@ -46,6 +47,10 @@ BOOTSTRAP_HEADER = """<!DOCTYPE html>
         max-width: 49%;
         margin: 0 auto;
       }
+
+      body {
+        font-size: 15px;
+      }
     </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -56,7 +61,11 @@ BOOTSTRAP_HEADER = """<!DOCTYPE html>
     <![endif]-->
   </head>
   <body>
+    <div class="jumbotron" style="background-color: #c9daf8; padding-bottom:0;">
+      <img class="center" style="display: block; max-width: 1000px;" src="runner_trace4.png" width="70%"/>
+    </div>
     <div class="content center">
+
 
 """
 

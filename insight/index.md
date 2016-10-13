@@ -1,4 +1,5 @@
-# Going the Distance: Improving Outcomes with Smart Coaching
+# Going the Distance: 
+# Improving Outcomes with Smart Coaching
 
 Behavioral change and self-improvement are often difficult to accomplish without the help of a supportive teacher. Even though technology is making it easier for us to track what we eat and how much we exercise, it's often all too easy to ignore advice when it's in the form of an automated message from a computer. Essentially, technology has not been able to replace a live teacher. Personal coaches, on the other hand, can provide invaluable support and advice to people who are trying to overcome fears and serious addictions, or to athletes trying to reach their peak performance. Recently, technology has made it possible for a single coach to assist multiple people, thus broadening the reach of who has access to a personal coach. 
 
