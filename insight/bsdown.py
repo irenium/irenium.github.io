@@ -44,12 +44,15 @@ BOOTSTRAP_HEADER = """<!DOCTYPE html>
       }
 
       .content img {
-        max-width: 49%;
-        margin: 0 auto;
+        max-width: 100%;
       }
 
       body {
         font-size: 15px;
+      }
+
+      h1, h2 {
+        color:#37B5EF;
       }
     </style>
 
