@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Executive Producers</title>
+        <link href="movie_crew_study.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.2.min.js"></script>
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.2.min.js"></script>
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-compiler-0.12.2.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <style>body{font-size: 16px; line-height: 1.6}</style>
+    </head>
+    <body>
+        
+
+
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+        
+                <div>
+                <img src="title_bar.png" style="width: 100%; height: 100%"/>
+                </div>
+                
+                <div><p>
+                How do animated movie studios hire top notch executive producers? And what types of experiences are considered valuable within this industry? I analyzed movie credits to answer these questions and understand the career paths of first-time executive producers.
+                </p></div> 
+                <br>
+
+                <div><p>
+                For animated movies released since 1980, I determined who the executive producers were by scraping data from IMDb. For each of the producers, I created a map of their career to identify when they became an "executive producer," and what that person worked on prior to executive-producing. Not surprisingly, a lot of executive producers had experience writing movie scripts:
+                </p></div> 
+                <br>
+
+                <div><center>
+                <img src="writing_scatterplot.png" style="width: 70%; height: 70%"/>
+                </center></div>
+                <br>
+
+                <div><p>
+                The wide spread in IMDb rating for producers with no writing experience suggests that these people might be riskier bets as executive producers, if you are hoping to make a high rated movie. In contrast, IMDb ratings are above 4.0 for movies whose executive producer had at least one writing credit in the past. The plot above shows that there are less and less data available describing first-time executive producers with increasing amounts of writing experience. What if you want to use this dataset to compare a person who has helped write 1 movie script versus another person who has helped write 10 movies? The dataset is small, and so it becomes increasingly difficult to glean information regarding IMDb rating vs writing experience for producers with greater than 1 writing credit. Assigning the data to 2 distributions based on a distinct cutoff value for "writing experience" can help one discern the impact of writing experience on IMDb rating. Shown below are the same dataset separated into 2 distributions. The plot on the left shows the distributions based on a cutoff value of 1 writing credit, while the plot on the right shows the distributions based on a cutoff value of 9 writing credits.
+                </p></div>
+
+                
+                <div>
+                <img src="writers_distributions.png" style="width: 100%; height: 100%"/>
+                </div>
+                
+                <div><p>
+                In both of the plots above, the green distributions are shifted slightly to the right, indicating that writing experience is correlated with higher IMDb rating. The distributions overlap each other to a greater degree in the left plot versus the right plot. In other words, people with at least 9 writing credits have been hired on as executive producer to help make movies that are noticeably higher quality than those people with less than 9 writing credits. The average IMDb rating (x&#772) for each distribution can be calculated to compare the distributions more precisely, and statistics can be used to support the significance of these findings. In the plot below, x&#772<sub>2</sub> is the average IMDb rating of the green distribution and x&#772<sub>1</sub> is the average IMDb rating of the blue distribution. Their difference (x&#772<sub>2</sub> - x&#772<sub>1</sub>) is shown in black on the left axis, while the statistical power of the analysis is shown in red on the right axis. Statistical power was determined using a significance level of 0.05, and the target difference between x&#772<sub>2</sub> and x&#772<sub>1</sub> was 1 IMDb rating. In other words, I want to be 95% confident in my findings and also want to see a difference of at least 1 IMDb rating when comparing the distributions (1 IMDb rating is also comparable to the pooled standard deviation for the distributions).
+                </p></div>
+                
+                <div><center>
+                <img src="power_plot_writing.png" style="width: 70%; height: 70%"/>
+                </center></div>
+                <br>
+
+                <div><p>
+                As the number of writing credits increases (x-axis value), x&#772<sub>2</sub> - x&#772<sub>1</sub> increases, however the statistical power decreases. This result is expected because there is less and less data available as number of writing credits increases. If we consider any findings below a statistical power of 0.8 to be below our tolerance threshold, then we can conclude that having more writing experience (up to 9 movie credits) has historically described the more successful executive producers based on IMDb rating. 
+                </p></div>
+
+                <div><p>
+                The analysis described above was applied to animation experience, production experience (people who worked on the production team but were not yet "executive producer"), director experience, and visual effects experience:
+                </p></div>
+
+                <div>
+                <img src="power_plots.png" style="width: 100%; height: 100%"/>
+                </div>
+                <br>
+
+                <div><p>
+                The plots above show that people with animation experience (up to 6 animation credits) have went on to become successful executive producers. The impact on IMDb rating is greater for people with writing experience than for people with animation experience, although both contribute to success. All other areas which were analyzed (production, direction, and visual effects) do not appear to be valuable experiences for a successful executive producer to have. Importantly, the difference in average IMDb ratings for the distributions were quite small and not dependent on the x-axis (where x-axis represents the number of movies where that particular skill was gained).
+                </p></div>
+
+                <div><p>
+                The accompanying distributions for the plots above are shown below. Note that it's difficult to glean any insights from the distributions below without looking at the results of the power analysis.
+                </p></div>
+
+                <div>
+                <img src="writers_distributions2.png" style="width: 100%; height: 100%"/>
+                </div>
+                <br>
+
+                <h4> <b>PROJECT MOTIVATION, LIMITATIONS, AND CAVEATS</b></h4>
+                    <div><p>My primary motivation for doing this analysis is simply an interest in people analytics. Most people stop watching movies once the credits start rolling, but I see movie credits as the perfect opportunity to quantify talent within the movie industry! I wanted to clarify how people move up the ladder within the animated movie industry, and to understand what makes executive producers so special. When I did a general online search for "executive producer," I quickly discovered that it's not a very well-defined role, and nobody offers up suggestions for how to become one. Sometimes executive producers manage budgets or timelines, and sometimes they are granted decision-making power for a movie. While it sounds like executive producers must posess business savvy, the analysis showed that executive producers actually have backgrounds in art, writing, and animation (not management or business). 
+                    </p></div> 
+
+                <div><p>
+                There are a lot of limitations and caveats to this analysis. One obvious problem is that movies with higher budgets can afford to hire experienced people. Higher budget movies are more likely to have higher IMDb ratings, and I didn't try to estimate how much of the data was confounded by this underlying feature. Another problem with the analysis is that industries are always changing. There may have been some writers who became successful movie producers in the past, but that doesn't mean someone can move into production simply because they are a writer. I did not quantify how many writers exist within the animated movie industry and what percentage of them move on to become producers. I recognize all these caveats, yet still chose to publish my analysis because I think that similar analyses can be performed within different industries, and that this project serves as a good example of how to glean insights from small datasets when predictive modeling is not possible. 
+                </p></div>
+
+                   
+            </div>
+        </div>
+    </div>
+</article>
+    
+    </body>
+</html>
