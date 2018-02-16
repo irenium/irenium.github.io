@@ -1,0 +1,30 @@
+---
+title: "Interactive Map Built w/ Leaflet & R-Markdown"
+fontsize: 10 pt
+author: "Irene Chen"
+date: "16-FEB-2018"
+output: html_document
+---
+
+<br>
+<br>
+
+#### **GPS Tracks for Backpacking into Havasupai, AZ (Grand Canyon)**
+
+The clusters show the number of waypoints recorded during our hike. Zoom in to adjust the resolution of the clusters.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, eval=TRUE}
+library(leaflet)
+file <- list.files(pattern="*.csv", full=TRUE)
+df <- read.csv(file, header=TRUE, sep=",")
+
+my_map <- leaflet() %>%
+  addTiles() %>%
+  addMarkers(data = df, clusterOptions = markerClusterOptions()) %>%
+  setView(lng=-112.7094, lat=36.15947, zoom=9)
+my_map
+```
