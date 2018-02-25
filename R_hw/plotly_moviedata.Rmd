@@ -10,7 +10,12 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 ## IMDb Movie Data
-The following plot displays movie data taken from IMDb. The x-axis shows the movie release year (between 1980 and present), the y-axis shows the IMDb rating for the movie, and the z-axis shows the total number of crew working on the movie. The bubble size and color reflect how much money the movie made (movie gross, not profit). Mouse over the bubbles to view the title of the movie!
+- The plot on the next slide displays movie data taken from IMDb. 
+- The x-axis shows the movie release year (between 1980 and present), the y-axis shows the IMDb rating for the movie, and the z-axis shows the total number of crew working on the movie. 
+- The bubble size and color reflect how much money the movie made (movie gross, not profit). 
+- Mouse over the bubbles to view the title of the movie!
+
+## 3D Plot of Movie Data 
 
 ```{r, echo=FALSE, message=FALSE}
 library(plotly)
