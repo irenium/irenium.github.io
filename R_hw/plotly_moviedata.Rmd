@@ -1,0 +1,23 @@
+---
+title: "3D Plot of Movie Data"
+author: "Irene Chen"
+date: "2/25/2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## IMDb Movie Data
+The following plot displays movie data taken from IMDb. The x-axis shows the movie release year (between 1980 and present), the y-axis shows the IMDb rating for the movie, and the z-axis shows the total number of crew working on the movie. The bubble size and color reflect how much money the movie made (movie gross, not profit). Mouse over the bubbles to view the title of the movie!
+
+```{r, echo=FALSE, message=FALSE}
+library(plotly)
+file <- list.files(pattern="moviedf.csv", full=TRUE)
+df <- read.csv(file, header=TRUE, sep=",")
+movie_plot <- plot_ly(y=df$year, x=df$rating, z=df$num_crew, mode="markers", marker=list(size=df$gross, sizeref=15), color= ~df$gross, text = ~paste(df$title))
+layout(movie_plot, title="3 Decades of Animated Movies", scene=list(xaxis=list(title="IMDb rating", range=c(4,9)), yaxis=list(title="year"),
+                                               zaxis=list(title="crew size")))
+```
+
