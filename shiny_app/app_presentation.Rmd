@@ -1,0 +1,42 @@
+---
+title: "Shiny App to Visualize Industry Trends"
+author: "Irene Chen"
+date: "3/1/2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Product Overview
+
+The app I developed is a tool for market researchers (or similar) to interact with industry data and understand how trends evolve over time within their industry.
+
+My example focuses on the animated movie industry, and is geared towards people who are trying to understand how to allocate resources during movie production. It helps answer questions such as:
+
+- How much money do animated movies make?
+- How many animated movies are released per year?
+- How big should my movie crew be, if I want to make a lot of money?
+- Should I hire more animators, artists, or visual effects experts?
+
+## Analysis and Calculations
+ui.R sets up the user interface for the product
+server.R analyzes a dataset, and applies filters to present different datasets of interest to the user
+
+The analysis can be customized depending on the market questions. For my example, I calculate the median IMDb rating for a given year, and the total number of movies that are released each year.
+
+## Overview of Product Interface
+- A slider can be moved by the user, to scroll through year 1980 up to 2016
+- The user can select buttons depending on what team they want to view (size of the animation team vs size of the writing team vs total crew size)
+- The x-axis shows the IMDb rating for the movie
+- The y-axis shows the total number of people who belonged to a selected team  
+- The bubble size and bubble color reflect how much money the movie made (movie gross, not movie profit). 
+- Lastly, the user can mouse over the bubbles to view the title of the movie!
+
+## Product Interface
+![](/Users/ichen/Documents/R/shiny_app/product_interface.jpg)
+
+## Check Out My Shiny App!
+Thank you for visiting. My app can be accessed here:
+http://irenium.shinyapps.io/shiny_app/
