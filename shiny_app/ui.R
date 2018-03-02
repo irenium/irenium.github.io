@@ -25,7 +25,12 @@ shinyUI(fluidPage(
                     c("All Crew"="num_crew", "Animation"="num_animators", 
                       "Visual Effects"="num_visual_fx", "Art"="num_artists",
                       "Writing"="num_writers", "Producers"="num_producers"
-                      ))
+                      )),
+       
+       "MOVE THE SLIDER TO CHANGE THE YEAR.  ",
+       "SELECT A TEAM TO FILTER THE DATA FURTHER.  ",
+       "BUBBLE SIZE AND COLOR CORRESPOND TO MOVIE GROSS.  ",
+       "MOUSE OVER THE BUBBLE TO VIEW MOVIE TITLES!"
     ),
     
     # Output a bubble plot,

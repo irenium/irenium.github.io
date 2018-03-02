@@ -24,7 +24,16 @@ My example focuses on the animated movie industry, and is geared towards people 
 ui.R sets up the user interface for the product
 server.R analyzes a dataset, and applies filters to present different datasets of interest to the user
 
-The analysis can be customized depending on the market questions. For my example, I calculate the median IMDb rating for a given year, and the total number of movies that are released each year.
+The analysis can be customized depending on the market questions. For my example, I calculate the median IMDb rating for a given year, and the total number of movies that are released each year (shown below):
+
+```{r, echo=TRUE}
+file <- list.files(pattern="moviedf.csv", full=TRUE)
+df <- read.csv(file, header=TRUE, sep=",")
+df_by_yr <- df[(df["year"] == 2006),]
+
+# calculate and print the number of movies in a given year using nrow:
+print(nrow(df_by_yr))
+```
 
 ## Overview of Product Interface
 - A slider can be moved by the user, to scroll through year 1980 up to 2016

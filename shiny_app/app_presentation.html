@@ -114,7 +114,16 @@
 
 <p>ui.R sets up the user interface for the product server.R analyzes a dataset, and applies filters to present different datasets of interest to the user</p>
 
-<p>The analysis can be customized depending on the market questions. For my example, I calculate the median IMDb rating for a given year, and the total number of movies that are released each year.</p>
+<p>The analysis can be customized depending on the market questions. For my example, I calculate the median IMDb rating for a given year, and the total number of movies that are released each year (shown below):</p>
+
+<pre class = 'prettyprint lang-r'>file &lt;- list.files(pattern=&quot;moviedf.csv&quot;, full=TRUE)
+df &lt;- read.csv(file, header=TRUE, sep=&quot;,&quot;)
+df_by_yr &lt;- df[(df[&quot;year&quot;] == 2006),]
+
+# calculate and print the number of movies in a given year using nrow:
+print(nrow(df_by_yr))</pre>
+
+<pre >## [1] 51</pre>
 
 </article></slide><slide class=''><hgroup><h2>Overview of Product Interface</h2></hgroup><article  id="overview-of-product-interface">
 

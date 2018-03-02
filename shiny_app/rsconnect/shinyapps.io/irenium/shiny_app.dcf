@@ -5,6 +5,6 @@ account: irenium
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 291481
-bundleId: 1248257
+bundleId: 1248374
 url: https://irenium.shinyapps.io/shiny_app/
-when: 1519964612.51802
+when: 1519969668.88199
